@@ -23,8 +23,8 @@ Automated API test suite against the live Trello REST API, built with Postman.
 
 ## Setup
 
-1. Import `Trello_API_postman_collection.json` into Postman
-2. Import `environment.template.json` and rename it to `Trello API - Local`
+1. Import `Trello API.postman_collection.json` into Postman
+2. Import `TrelloEnv.postman_environment.json` and rename it to `Trello API - Local`
 3. Add your Trello API key and token to the environment
    - Get yours at: https://trello.com/power-ups/admin
 4. Run the collection in order from top to bottom
