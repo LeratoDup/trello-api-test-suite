@@ -35,3 +35,7 @@ Key and token are stored as environment variables — never hardcoded.
 Do not commit your real credentials. The template file has placeholders only.
 
 ## Results
+<img width="1557" height="961" alt="Trello API - run results 1" src="https://github.com/user-attachments/assets/8737e040-5d31-4567-9700-847eaf2438ae" />
+
+<img width="1561" height="997" alt="Trello API - run results 2" src="https://github.com/user-attachments/assets/48b99425-99b3-4bd3-b0df-7213441a7b9b" />
+
