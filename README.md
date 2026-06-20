@@ -131,8 +131,8 @@ CI/CD Execution (Jenkins Ready)
 ## Jenkins CI Execution
 
 ### Successful Build Trigger
-![Jenkins Build](<img width="1892" height="912" alt="jenkins build" src="https://github.com/user-attachments/assets/80146e2b-1439-442d-a56f-ac2cd6b52757" />
-)
+![Jenkins Build]<img width="1892" height="912" alt="jenkins build" src="https://github.com/user-attachments/assets/80146e2b-1439-442d-a56f-ac2cd6b52757" />
+
 
 ### Newman Test Results
-![Newman Report](<img width="859" height="922" alt="newman" src="https://github.com/user-attachments/assets/6c94245d-a4bd-40ee-b044-130d5e8e6472" />)
+![Newman Report]<img width="859" height="922" alt="newman" src="https://github.com/user-attachments/assets/6c94245d-a4bd-40ee-b044-130d5e8e6472" />
