@@ -128,12 +128,11 @@ CI/CD Execution (Jenkins Ready)
 - HTML report generation  
 - Negative + positive API validation
 
-## 🖥️ Jenkins CI Execution
+## Jenkins CI Execution
 
 ### Successful Build Trigger
-![Jenkins Build](<img width="1912" height="892" alt="image" src="https://github.com/user-attachments/assets/d6488ce8-8eb8-4917-85c0-edfa857acd89" />
+![Jenkins Build](<img width="1892" height="912" alt="jenkins build" src="https://github.com/user-attachments/assets/80146e2b-1439-442d-a56f-ac2cd6b52757" />
 )
 
 ### Newman Test Results
-![Newman Report](<img width="1892" height="912" alt="image" src="https://github.com/user-attachments/assets/770976a3-d3cb-4a77-91ac-72ffd900a98e" />
-)
+![Newman Report](<img width="859" height="922" alt="newman" src="https://github.com/user-attachments/assets/6c94245d-a4bd-40ee-b044-130d5e8e6472" />)
