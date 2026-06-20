@@ -1,13 +1,5 @@
 # Trello API Test Suite
 
-![Postman](https://img.shields.io/badge/Postman-API%20Testing-orange)
-![Newman](https://img.shields.io/badge/Newman-CLI-blue)
-![CI Ready](https://img.shields.io/badge/CI-Ready-brightgreen)
-![Automation](https://img.shields.io/badge/API-Automation-purple)
-![Status](https://img.shields.io/badge/Tests-Passing-success)
-
----
-
 ## Overview
 
 This project is an automated API test suite built using **Postman** and executed via **Newman CLI**, designed to validate core workflows of the Trello REST API.
@@ -19,37 +11,6 @@ It demonstrates real-world QA automation practices including:
 - CI/CD pipeline compatibility (Jenkins-ready)  
 - Dynamic data chaining across requests  
 - Negative and positive validation strategies  
-
----
-
-## System Architecture
-┌────────────────────┐
-│   Postman Client   │
-│ (Test Development) │
-└─────────┬──────────┘
-          │ Export / JSON
-          ▼
-┌────────────────────┐
-│   GitHub Repo      │
-│ Source of Truth    │
-└─────────┬──────────┘
-          │ git push / pull
-          ▼
-┌────────────────────┐
-│   Jenkins (Docker) │
-│ CI Execution Layer │
-└─────────┬──────────┘
-          │ runs Newman
-          ▼
-┌────────────────────┐
-│   Newman CLI       │
-│ API Test Runner    │
-└─────────┬──────────┘
-          │ reports
-          ▼
-┌────────────────────┐
-│ HTML / CLI Reports │
-└────────────────────┘
 
 ---
 
