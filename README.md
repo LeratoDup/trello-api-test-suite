@@ -67,8 +67,8 @@ The suite validates a full Trello lifecycle:
 ### 1. Clone repository 
 
 ### 2. Import into Postman
-Import postman_collection.json
-Import postman_environment.json
+- Import postman_collection.json
+- Import postman_environment.json
 
 
 ### 3. Configure environment variables
