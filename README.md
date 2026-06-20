@@ -52,6 +52,22 @@ The suite validates a full Trello lifecycle:
 
 ---
 
+## CI/CD Pipeline
+
+This project is integrated with Jenkins (Docker) and automatically executes API tests on every push to the repository.
+
+### Pipeline Flow
+
+GitHub Push → Webhook (ngrok) → Jenkins → Newman → HTML Report
+
+### Live CI Behavior
+
+- Every commit triggers an automated build
+- Newman executes full API regression suite
+- HTML report is generated on each run
+
+---
+
 ## Tech Stack
 
 - Postman (Test design)
@@ -97,12 +113,27 @@ CI/CD Execution (Jenkins Ready)
 **Jenkins runs:**
 ```newman run postman/postman_collection.json -e postman/postman_environment.json```
 
-Test Evidence
+---
+
+## Postman collection runner evidence 
 <img width="1557" height="961" alt="Trello API - run results 1" src="https://github.com/user-attachments/assets/81dcfd9c-40f6-41c1-824e-04097b448e49" />
 <img width="1561" height="997" alt="Trello API - run results 2" src="https://github.com/user-attachments/assets/774c7c5d-e90d-4b91-ac2f-e8284e8cc3fe" />
 
+## CI Execution Evidence
 
-Security Notes
-- No credentials stored in repository
-- API keys injected via environment variables
-- Supports secure CI/CD execution via Jenkins credentials
+> Jenkins automatically triggers on every GitHub push
+
+- Automated build trigger via GitHub webhook  
+- Newman test execution  
+- HTML report generation  
+- Negative + positive API validation
+
+## 🖥️ Jenkins CI Execution
+
+### Successful Build Trigger
+![Jenkins Build](<img width="1912" height="892" alt="image" src="https://github.com/user-attachments/assets/d6488ce8-8eb8-4917-85c0-edfa857acd89" />
+)
+
+### Newman Test Results
+![Newman Report](<img width="1892" height="912" alt="image" src="https://github.com/user-attachments/assets/770976a3-d3cb-4a77-91ac-72ffd900a98e" />
+)
