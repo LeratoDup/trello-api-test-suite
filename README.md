@@ -1,41 +1,140 @@
 # Trello API Test Suite
 
-Automated API test suite against the live Trello REST API, built with Postman.
+![Postman](https://img.shields.io/badge/Postman-API%20Testing-orange)
+![Newman](https://img.shields.io/badge/Newman-CLI-blue)
+![CI Ready](https://img.shields.io/badge/CI-Ready-brightgreen)
+![Automation](https://img.shields.io/badge/API-Automation-purple)
+![Status](https://img.shields.io/badge/Tests-Passing-success)
+
+---
+
+## Overview
+
+This project is an automated API test suite built using **Postman** and executed via **Newman CLI**, designed to validate core workflows of the Trello REST API.
+
+It demonstrates real-world QA automation practices including:
+
+- End-to-end API workflow testing  
+- Environment-driven test execution  
+- CI/CD pipeline compatibility (Jenkins-ready)  
+- Dynamic data chaining across requests  
+- Negative and positive validation strategies  
+
+---
+
+## System Architecture
+┌────────────────────┐
+│   Postman Client   │
+│ (Test Development) │
+└─────────┬──────────┘
+          │ Export / JSON
+          ▼
+┌────────────────────┐
+│   GitHub Repo      │
+│ Source of Truth    │
+└─────────┬──────────┘
+          │ git push / pull
+          ▼
+┌────────────────────┐
+│   Jenkins (Docker) │
+│ CI Execution Layer │
+└─────────┬──────────┘
+          │ runs Newman
+          ▼
+┌────────────────────┐
+│   Newman CLI       │
+│ API Test Runner    │
+└─────────┬──────────┘
+          │ reports
+          ▼
+┌────────────────────┐
+│ HTML / CLI Reports │
+└────────────────────┘
+
+---
 
 ## Workflow Under Test
 
-1. Get all boards
-2. Create board (dynamic name via pre-request script)
-3. Get single board — validate schema
-4. Create TODO list scoped to board
-5. Create card scoped to TODO list
-6. Move card to DONE list
-7. Delete board (teardown)
-8. GET deleted board — assert 404
+The suite validates a full Trello lifecycle:
 
-## What's Tested
+1. Retrieve all boards  
+2. Create a board (dynamic naming)  
+3. Fetch and validate board schema  
+4. Create TODO list linked to board  
+5. Create card linked to list  
+6. Move card to DONE  
+7. Delete board (cleanup step)  
+8. Validate deleted board returns `404`  
 
-- Status codes on all requests
-- Nested schema validation (prefs, switcherViews, badges)
-- State chaining via environment variables (boardId → toDoListId → cardId)
-- Dynamic data generation (no hardcoded board or card names)
-- Negative test: confirms deletion returns 404
+---
 
-## Setup
+## What This Project Validates
 
-1. Import `Trello API.postman_collection.json` into Postman
-2. Import `TrelloEnv.postman_environment.json` and rename it to `Trello API - Local`
-3. Add your Trello API key and token to the environment
-   - Get yours at: https://trello.com/power-ups/admin
-4. Run the collection in order from top to bottom
+### Functional Testing
+- API status codes (200, 201, 404)
+- CRUD operations across Trello resources
 
-## Auth
+### Data Integrity
+- Schema validation (boards, lists, cards)
+- Nested object validation
 
-Key and token are stored as environment variables — never hardcoded.
-Do not commit your real credentials. The template file has placeholders only.
+### State Management
+- Environment variable chaining:
+  boardId → listId → cardId
 
-## Results
-<img width="1557" height="961" alt="Trello API - run results 1" src="https://github.com/user-attachments/assets/8737e040-5d31-4567-9700-847eaf2438ae" />
+### Test Design
+- Dynamic data generation (no hardcoded values)
+- Reusable environment configuration
 
-<img width="1561" height="997" alt="Trello API - run results 2" src="https://github.com/user-attachments/assets/48b99425-99b3-4bd3-b0df-7213441a7b9b" />
+### Negative Testing
+- Validates deletion behavior (404 response)
 
+---
+
+## Tech Stack
+
+- Postman (Test design)
+- Newman CLI (Execution engine)
+- Jenkins (CI/CD runner - Docker)
+- Git & GitHub (Version control)
+- HTML Extra Reporter (Reporting)
+
+---
+
+## Setup Instructions
+
+### 1. Clone repository 
+
+### 2. Import into Postman
+Import postman_collection.json
+Import postman_environment.json
+
+
+### 3. Configure environment variables
+
+Add:
+key
+token
+
+Get credentials:
+https://trello.com/power-ups/admin
+
+Run Tests Locally (Newman)
+newman run postman/postman_collection.json \
+  -e postman/postman_environment.json \
+  --reporters cli,htmlextra \
+  --reporter-htmlextra-export reports/newman-report.html
+
+CI/CD Execution (Jenkins Ready)
+**Pipeline trigger flow:**
+GitHub Push → Jenkins Webhook → Newman Execution → Report Generated
+**Jenkins runs:**
+newman run postman/postman_collection.json -e postman/postman_environment.json
+
+Test Evidence
+<img width="1557" height="961" alt="Trello API - run results 1" src="https://github.com/user-attachments/assets/81dcfd9c-40f6-41c1-824e-04097b448e49" />
+
+Security Notes
+No credentials stored in repository
+API keys injected via environment variables
+Supports secure CI/CD execution via Jenkins credentials
