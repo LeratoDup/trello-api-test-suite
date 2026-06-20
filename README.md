@@ -80,14 +80,14 @@ Add:
 - Get credentials:
 https://trello.com/power-ups/admin
 
--Run Tests Locally (Newman)
+- Run Tests Locally (Newman)
 
 newman run postman/postman_collection.json \
   -e postman/postman_environment.json \
   --reporters cli,htmlextra \
   --reporter-htmlextra-export reports/newman-report.html
 
--CI/CD Execution (Jenkins Ready)
+- CI/CD Execution (Jenkins Ready)
 
 
 **Pipeline trigger flow:**
