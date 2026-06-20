@@ -74,8 +74,8 @@ Import postman_environment.json
 ### 3. Configure environment variables
 
 Add:
-key
-token
+- key
+- token
 
 Get credentials:
 https://trello.com/power-ups/admin
@@ -96,6 +96,6 @@ Test Evidence
 <img width="1557" height="961" alt="Trello API - run results 1" src="https://github.com/user-attachments/assets/81dcfd9c-40f6-41c1-824e-04097b448e49" />
 
 Security Notes
-No credentials stored in repository
-API keys injected via environment variables
-Supports secure CI/CD execution via Jenkins credentials
+- No credentials stored in repository
+- API keys injected via environment variables
+- Supports secure CI/CD execution via Jenkins credentials
