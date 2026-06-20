@@ -77,25 +77,25 @@ Add:
 - key
 - token
 
-- Get credentials:
-https://trello.com/power-ups/admin
+Get credentials:
+```https://trello.com/power-ups/admin```
 
-- Run Tests Locally (Newman)
+Run Tests Locally (Newman)
 
-newman run postman/postman_collection.json \
+newman run ```postman/postman_collection.json \
   -e postman/postman_environment.json \
   --reporters cli,htmlextra \
-  --reporter-htmlextra-export reports/newman-report.html
+  --reporter-htmlextra-export reports/newman-report.html```
 
-- CI/CD Execution (Jenkins Ready)
+CI/CD Execution (Jenkins Ready)
 
 
 **Pipeline trigger flow:**
-GitHub Push → Jenkins Webhook → Newman Execution → Report Generated
+```GitHub Push → Jenkins Webhook → Newman Execution → Report Generated```
 
 
 **Jenkins runs:**
-newman run postman/postman_collection.json -e postman/postman_environment.json
+```newman run postman/postman_collection.json -e postman/postman_environment.json```
 
 Test Evidence
 <img width="1557" height="961" alt="Trello API - run results 1" src="https://github.com/user-attachments/assets/81dcfd9c-40f6-41c1-824e-04097b448e49" />
